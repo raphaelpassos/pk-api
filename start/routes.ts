@@ -14,6 +14,14 @@ Route.group(() => {
 }).namespace('App/Controllers/Http/auth')
 
 Route.group(() => {
+  Route.resource('channels', 'ChannelsController').apiOnly()
+  Route.resource('messagestatus', 'MessageStatusController').apiOnly()
+  Route.resource('messages', 'MessagesController').apiOnly()
+  Route.resource('messagesresponse', 'MessageResponsesController').apiOnly()
+  Route.resource('templates', 'TemplatesController').apiOnly()
+}).namespace('App/Controllers/Http/outputs')
+
+Route.group(() => {
   Route.get('search/journeys/page', 'JourneysController.page')
   Route.get('search/journeys/:id', 'JourneysController.show')
   Route.get('search/journeys', 'JourneysController.index')
